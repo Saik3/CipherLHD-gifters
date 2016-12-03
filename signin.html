@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Sign in</title>
+        <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+        <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAS5dPDzWNJMKmcl3WgPszezbzSPepKKXc",
+            authDomain: "gifters-880da.firebaseapp.com",
+            databaseURL: "https://gifters-880da.firebaseio.com",
+            storageBucket: "",
+            messagingSenderId: "616731116636"
+          };
+          firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript">
+          // FirebaseUI config.
+          var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+              // Leave the lines as is for the providers you want to offer your users.
+              firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+              firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ]
+          };
+
+          // Initialize the FirebaseUI Widget using Firebase.
+          var ui = new firebaseui.auth.AuthUI(firebase.auth());
+          // The start method will wait until the DOM is loaded.
+          ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
+    </head>
+    <body>
+        <div id="firebaseui-auth-container"></div>
+    </body>
+</html>
