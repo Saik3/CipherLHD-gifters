@@ -5,6 +5,36 @@
       <link href="https://fonts.googleapis.com/css?family=Bungee|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link type="text/css" rel="stylesheet" href="mystylesheet.css" />
+      <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+      <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+      <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAS5dPDzWNJMKmcl3WgPszezbzSPepKKXc",
+          authDomain: "gifters-880da.firebaseapp.com",
+          databaseURL: "https://gifters-880da.firebaseio.com",
+          storageBucket: "",
+          messagingSenderId: "616731116636"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script type="text/javascript">
+        initApp = function() {
+          firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+              // User is signed out.
+              window.location = "index.html";
+            }
+          }, function(error) {
+            console.log(error);
+          });
+        };
+
+        window.addEventListener('load', function() {
+          initApp()
+        });
+      </script>
     </head>
     <body>
       <div class="container">

@@ -18,15 +18,28 @@
           align-items: center;
           justify-content: center;
         }
-        button{
+        a {
           display: inline;
           margin-left: 10px;
           border-radius: 5pt;
+          background-color: lightgrey;
+          text-decoration: none;
+          color: black;
+          padding: 10px;
+          box-shadow: 0px 5px 0px black;
+          position: relative;
+          top: 0px;
+          transition: all ease 0.3s;
+          font-family: sans-serif;
+        }
+        a:active {
+          box-shadow: 0 3px 0 black;
+          top: 3px;
         }
       </style>
       <div class="center">
-        <button id="tobuy"><h1>Purchase<h1></button>
-        <button><h1>Arts&Crafts<h1></button>
+        <a href="signin.html" id="tobuy"><h1>Purchase</h1></a>
+        <a href="signin.html"><h1>Arts &amp; Crafts</h1></a>
       </div>
         <img src="http://pics.clipartpng.com/midle/Colorful_Gift_PNG_Clipart-268.png" style="margin: 0 auto; display: block">
 
